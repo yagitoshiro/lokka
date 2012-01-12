@@ -1,3 +1,4 @@
+# encoding: utf-8
 class Category
   include DataMapper::Resource
 
@@ -9,6 +10,8 @@ class Category
   property :created_at, DateTime
   property :updated_at, DateTime
   property :parent_id, Integer
+
+  validates_presence_of :title
 
   is :tree, :order => :title
 
@@ -29,6 +32,10 @@ class Category
       cats.unshift ancestor.fuzzy_slug
     end
     "/category/#{cats.join('/')}/"
+  end
+
+  def edit_link
+    "/admin/#{self.class.to_s.tableize}/#{id}/edit"
   end
 end
 

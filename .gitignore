@@ -1,4 +1,4 @@
-/*.sqlite3
+config.yml
 /db/*.sqlite3
 /bundle
 /vendor/bundle
@@ -14,3 +14,7 @@
 /pkg
 /.rvmrc
 /Lokka.app
+/doc
+/.yardoc
+.sass-cache
+database.yml
